@@ -15,7 +15,7 @@ public class SupportSystem
 {
     private InputReader reader;
     private Responder responder;
-    
+
     /**
      * Creates a technical support system.
      */
@@ -36,9 +36,11 @@ public class SupportSystem
         printWelcome();
         while(!finished) {
             String input = reader.getInput();
-            if(input.toLowerCase().contains("bye")) { //Con el contains podemos meter espacios antes y despues.
+            String temp = input.trim(); // Se guarda input aplicanto el metodo trim, y haciendo que ignore todos los espacios en blanco de antes y despues, centrandose en la palabra
+            if(temp.equals("bye")) { //Con el contains podemos meter espacios antes y despues.
                 finished = true;
             }
+
             else {
                 String response = responder.generateResponse();
                 System.out.println(response);
