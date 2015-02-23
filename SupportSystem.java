@@ -33,19 +33,12 @@ public class SupportSystem
     public void start()
     {
         boolean finished = false;
-
         printWelcome();
-
         while(!finished) {
             String input = reader.getInput();
-
-            if(input.contains("bye")) { //Con el contains podemos meter espacios antes y despues.
+            if(input.toLowerCase().contains("bye")) { //Con el contains podemos meter espacios antes y despues.
                 finished = true;
             }
-            else if(input.contains("Bye") || input.contains("bYe") || input.contains("byE") || input.contains("BYE")){
-                    input.toLowerCase();
-                    finished = true;
-                }
             else {
                 String response = responder.generateResponse();
                 System.out.println(response);
