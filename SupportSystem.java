@@ -42,6 +42,10 @@ public class SupportSystem
             if(input.contains("bye")) { //Con el contains podemos meter espacios antes y despues.
                 finished = true;
             }
+            else if(input.contains("Bye") || input.contains("bYe") || input.contains("byE") || input.contains("BYE")){
+                    input.toLowerCase();
+                    finished = true;
+                }
             else {
                 String response = responder.generateResponse();
                 System.out.println(response);
