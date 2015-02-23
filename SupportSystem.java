@@ -39,7 +39,7 @@ public class SupportSystem
         while(!finished) {
             String input = reader.getInput();
 
-            if(input.startsWith("bye")) {
+            if(input.contains("bye")) { //Con el contains podemos meter espacios antes y despues.
                 finished = true;
             }
             else {
