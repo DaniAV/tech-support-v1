@@ -1,3 +1,4 @@
+
 /**
  * This class implements a technical support system. It is the top
  * level class in this project. The support system communicates via
@@ -15,7 +16,6 @@ public class SupportSystem
 {
     private InputReader reader;
     private Responder responder;
-
     /**
      * Creates a technical support system.
      */
@@ -36,13 +36,14 @@ public class SupportSystem
         printWelcome();
         while(!finished) {
             String input = reader.getInput();
-            String temp = input.trim(); // Se guarda input aplicanto el metodo trim, y haciendo que ignore todos los espacios en blanco de antes y despues, centrandose en la palabra
-            if(temp.equals("bye")) { //Con el contains podemos meter espacios antes y despues.
+            input = input.toLowerCase();
+            input = input.trim();; // Se guarda input aplicanto el metodo trim, y haciendo que ignore todos los espacios en blanco de antes y despues, centrandose en la palabra
+            if(input.equals("bye")) { //Con el contains podemos meter espacios antes y despues.
                 finished = true;
             }
 
             else {
-                String response = responder.generateResponse();
+                String response = responder.generateResponse(input);
                 System.out.println(response);
             }
         }
