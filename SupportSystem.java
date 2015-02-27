@@ -1,4 +1,4 @@
-
+import java.util.HashSet;
 /**
  * This class implements a technical support system. It is the top
  * level class in this project. The support system communicates via
@@ -35,7 +35,7 @@ public class SupportSystem
         boolean finished = false;
         printWelcome();
         while(!finished) {
-            String input = reader.getInput();
+            HashSet input = reader.getInput();
             input = input.toLowerCase();
             input = input.trim();; // Se guarda input aplicanto el metodo trim, y haciendo que ignore todos los espacios en blanco de antes y despues, centrandose en la palabra
             if(input.equals("bye")) { 
