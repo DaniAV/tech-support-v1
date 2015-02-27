@@ -30,7 +30,16 @@ public class InputReader
     {
         System.out.print("> ");         // print prompt
         String inputLine = reader.nextLine();
-
+        String[] partes = inputLine.split(" ");
+        int index = 0;
+        for(String par: partes)
+        {   
+            while(index < 1)
+            {
+                inputLine = par;
+                index++;
+            }
+        }
         return inputLine;
     }
 }

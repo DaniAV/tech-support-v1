@@ -18,15 +18,17 @@ public class Responder
      */
     public Responder()
     {
-        res = new HashMap<String, String>();
-        respuestas = new ArrayList<String>(); 
-        rnd = new Random();
-        respuestas.add("Hola");
+        res = new HashMap<String, String>(); // Añado hashMap
+        respuestas = new ArrayList<String>();  //Añado ArrayList
+        rnd = new Random(); //Añado Random
+        
+        respuestas.add("Hola"); //Se añaden 4 respuestas al ArrayList
         respuestas.add("Adios");
         respuestas.add("Bien y tu");
         respuestas.add("De nada");
         respuestas.add("That sounds interesting. Tell me more...");
-        res.put("hola", "hola como estas");
+        
+        res.put("hola", "hola como estas"); //Se añaden 4 indices, con 4 respuestas al hashMap
         res.put("ayuda", "en que puedo ayudarte");
         res.put("adios", "hasta luego");
         res.put("error", "reinicia");
@@ -38,16 +40,16 @@ public class Responder
      */
     public String generateResponse(String palabra)
     {
-        String r = "";
-        if(res.containsKey(palabra))
+        String response = ""; //Se crea una variable local que sera la que se devuelva
+        if(res.containsKey(palabra)) // Si el hashMap, contiene la palabra indicada por parametro en alguna key
         {
-            r = res.get(palabra);
+            response = res.get(palabra); // r, pasa a valer el valor del hasMap asociada a esa key
         }
-        else
+        else // sino
         {
-            int indice = rnd.nextInt(respuestas.size());
-            r = respuestas.get(indice);
+            int indice = rnd.nextInt(respuestas.size()); // se guarda un random al azar, mas pequeño que el numero de respuestas que hay
+            response = respuestas.get(indice); // response pasa a valer la respuesta guardada en el indice generado aleatoriamente en el paso anterior
         }
-        return r;
+        return response;
     }
 }

@@ -38,13 +38,13 @@ public class SupportSystem
             String input = reader.getInput();
             input = input.toLowerCase();
             input = input.trim();; // Se guarda input aplicanto el metodo trim, y haciendo que ignore todos los espacios en blanco de antes y despues, centrandose en la palabra
-            if(input.equals("bye")) { //Con el contains podemos meter espacios antes y despues.
+            if(input.equals("bye")) { 
                 finished = true;
             }
 
             else {
-                String response = responder.generateResponse(input);
-                System.out.println(response);
+                String response = responder.generateResponse(input); // Se guarda en response la respuesta que genera el metodo generateResponse de la clase responder para la palabra input pasada por parametro
+                System.out.println(response); //Se imprime la respuesta
             }
         }
         printGoodbye();
