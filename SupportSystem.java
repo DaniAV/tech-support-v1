@@ -36,8 +36,8 @@ public class SupportSystem
         printWelcome();
         while(!finished) {
             HashSet input = reader.getInput();
-            input = input.toLowerCase();
-            input = input.trim();; // Se guarda input aplicanto el metodo trim, y haciendo que ignore todos los espacios en blanco de antes y despues, centrandose en la palabra
+
+
             if(input.equals("bye")) { 
                 finished = true;
             }
